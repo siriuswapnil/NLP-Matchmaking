@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>SpeedDating Prototype</title> 
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome5-overrides.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Contact-Form-Clean.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Highlight-Blue.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Navigation-Clean.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Registration-Form-with-Photo.css') }}">
+    </head>
+ 
+<body>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+        <div class="container"><a class="navbar-brand" href="#">Multi Event Speed Dating Prototype</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item"></li>
+                    <li class="nav-item"></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="highlight-blue">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Register Event For SpeedDating</h2>
+                <p class="text-center">This application helps to create events, enroll attendees into them, and helps find potential match based on various parameters. </p>
+            </div>
+            <div class="buttons"><a class="btn btn-primary" role="button" href="/createevent">Create Event</a></div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <h3 class="text-dark mb-4">Events Registered</h3>
+        <div class="card shadow">
+            <div class="card-header py-3"></div>
+            <div class="card-body">
+                <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                    <table class="table my-0" id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Host</th>
+                                <th>Agenda</th>
+                                <th>Action</th>
+                                <th>Delete Event</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for event in events %}
+                            <tr>
+                                
+                                <td>{{ event.id }}</td>
+                                <td>{{ event.event_name }}</td>
+                                <td>{{ event.event_host }}</td>
+                                <td>{{ event.event_agenda }}</td>
+                                <td>
+                                    <a href="{{ event.id }}/dashboard">Event</a>
+                                        <br>
+                               
+                                </td>
+                                <td>
+                                    <a href="{{ event.id }}/delete">Delete Event</a>
+                        
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            
+                        </tbody>
+                        
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+</body>
+
+</html>

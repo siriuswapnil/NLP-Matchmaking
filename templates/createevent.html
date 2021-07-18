@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Table - Brand</title> 
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='fonts/fontawesome5-overrides.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Contact-Form-Clean.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Highlight-Blue.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Navigation-Clean.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/Registration-Form-with-Photo.css') }}">
+    </head>
+
+<body class="bg-gradient-primary">
+    <div class="contact-clean">
+        <form action="/createevent" method="POST">
+            <h2 class="text-center">Create Event</h2>
+            <div class="form-group"><input class="form-control" type="text" name="event-name" placeholder="Name"></div>
+            <div class="form-group"><input class="form-control" type="text" name="event-host" placeholder="Host"></div>
+    
+            
+            <div class="form-group"><textarea class="form-control" name="event-agenda" placeholder="Description" rows="14"></textarea></div>
+            <div class="form-group"><button class="btn btn-primary" type="submit">Create Event&nbsp;</button></div>
+
+        </form>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="{{ url_for('static', filename='js/theme.js') }}"></script>
+</body>
+
+</html>
